@@ -30,6 +30,9 @@ public class ProblemaConcurso2 {
 				for (int i = 0; i < tirada-3; i++) {
 					String aux = simbolos2.pollLast();
 					simbolos2.addFirst(aux);
+					if (aux.equals(null)) {
+						i--;
+					}
 					simb2 = aux;
 				}
 				for (int i = 0; i < tirada+4; i++) {
@@ -50,37 +53,7 @@ public class ProblemaConcurso2 {
 					maquina = true;
 					System.out.println("NO TIENES PREMIO Y TE HAS DEJADO: " + contador + "€");
 				}
-			}	while (!maquina) {
-				int tirada = (int) Math.floor(Math.random() * 24 + 1);
-				for (int i = 0; i < tirada+2; i++) {
-					String aux = simbolos.pollFirst();
-					simbolos.addLast(aux);
-					simb1 = aux;
-				}
-				for (int i = 0; i < tirada-3; i++) {
-					String aux = simbolos2.pollLast();
-					simbolos2.addFirst(aux);
-					simb2 = aux;
-				}
-				for (int i = 0; i < tirada+4; i++) {
-					String aux = simbolos3.pollFirst();
-					simbolos3.addLast(aux);
-					simb3 = aux;
-				}
-				System.out.println(simb1);
-				System.out.println(simb2);
-				System.out.println(simb3);
-				System.out.println();
-				contador++;
-				if (simb1 == simb2 && simb2 == simb3) {
-					maquina = true;
-					System.out.println("PREMIO!");
-				}
-				if (contador == dinMax && !maquina) {
-					maquina = true;
-					System.out.println("NO TIENES PREMIO Y TE HAS DEJADO: " + contador + "€");
-				}
-			}
+			}	
 		}
 	}
 }
