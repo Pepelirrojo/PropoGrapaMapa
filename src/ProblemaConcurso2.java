@@ -12,6 +12,7 @@ public class ProblemaConcurso2 {
 		ArrayDeque<String> simbolos2 = simbolos.clone();
 		ArrayDeque<String> simbolos3 = simbolos.clone();
 		boolean maquina = false;
+		int dinMax = sc.nextInt();
 		int contador = 0;
 		while (!maquina) {
 			String simb1 = null ;
@@ -42,7 +43,7 @@ public class ProblemaConcurso2 {
 				maquina = true;
 				System.out.println("PREMIO!");
 			}
-			if (contador == 10) {
+			if (contador == dinMax && !maquina) {
 				maquina = true;
 				System.out.println("NO TIENES PREMIO Y TE HAS DEJADO: " + contador + "€");
 			}
